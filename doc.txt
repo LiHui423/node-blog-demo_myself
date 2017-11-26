@@ -13,7 +13,23 @@
 11.启动服务，根目录下cmd:supervisor app.js
 12.引入核心模块path，
 13.配置首页的路由，修改app.js文件，app.get('/',(req,res)=>{});
-14.配置注册页链接的路由，修改app.js文件，app.get('/sign-up',(req,res)=>{})
+14.配置注册页和登录页链接的路由，修改app.js文件，app.get('/sign-up',(req,res)=>{})
+15.配置注册请求路由，修改app.js文件，app.post('/signUp',(req,res)=>{})
+16.引入body-parser,配置body-parser中间件，获取表单信息：req.body.username;req.body.password
+17.引入mysql,创建连接池pool
+18.创建文件sql/db.sql建库：blog 建表:user id;username;password
+19.数据库处理，保存用户名和密码
+20.返回响应，注册成功，去向views/sign-in.html,失败停留当前页面
+21.配置登录路由
+    21.1 请求表单修改action='/signIn'
+    21.2 创建路由 app.post('/signIn',...)
+    21.3 获取保单参数
+    21.4 数据库处理，查询
+    21.5 返回响应，登录成功，去向views/index.html页面
+22.创建项目主页：views/index.html
+23.创建数据库表username 字段的唯一性约束
+24.注册时，验证用户名是否存在，如果存在，返回注册页，不存在继续注册
+
 
 
 
