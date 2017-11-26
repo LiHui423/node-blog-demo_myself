@@ -10,5 +10,12 @@
 <%= session.userId%>
     <hr>
     <a href="/logout">LOGOUT</a>
+    <hr>
+    <form action="/article/create" method="post">
+        <input name="title" placeholder="title"><br>
+        <textarea name="content"></textarea><br>
+        <input type="file" name="photo"><br>
+        <input type="submit" value="publish">
+    </form>
 </body>
 </html>

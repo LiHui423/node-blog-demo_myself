@@ -47,6 +47,11 @@
 39.注销，修改index.html,添加注销链接
 40.修改user.js,处理注销的get请求：req.session.destroy();
 41.从定向到res.redirect('/');
+42.创建数据库表 article,博文表
+43.修改 views/index.html,添加发布博文的表单
+44.创建routes/article.js文件，在app.js中引入，处理跟博文有关的所有请求
+45.处理添加博文的请求
+46.添加查询所有博文功能，在index.html上显示博文列表
 
 
 

@@ -22,5 +22,6 @@ app.use(session({
 //导入
 require('./routes/default.js')(app);
 require('./routes/user.js')(app);
+require('./routes/article.js')(app);
 app.listen(80);
 
