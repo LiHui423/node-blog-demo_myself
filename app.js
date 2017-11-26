@@ -36,7 +36,8 @@ app.get('/sign-up',(req,res) => {
 });
 //配置登录链接的路由
 app.get('/sign-in',(req,res) => {
-    res.sendFile(path.join(__dirname+'/views/sign-in.html'));
+    //res.sendFile(path.join(__dirname+'/views/sign-in.html'));
+    res.render('sign-in',{message:null});
 });
 
 //添加注册请求
@@ -61,9 +62,11 @@ app.post('/signUp',(req,res) => {
                 connection.query(sql,[username,encryptedPassword],(err,results,fields) => {
                     if (err) throw err;
                     if(results.affectedRows===1){
-                        res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                        //res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                        res.render('sign-in',{message:'Sign up successful,sign in please.'})
                     }else{
-                        res.sendFile(path.join(__dirname,'/views/sign-up.html'))
+                        //res.sendFile(path.join(__dirname,'/views/sign-up.html'))
+                        res.render('sign-up',{message:'error'})
                     }
                 });
                 connection.release();
@@ -102,11 +105,13 @@ app.post('/signIn',(req,res) => {
                 if(bcrypt.compareSync(password,encryptedPassword)){
                     res.sendFile(path.join(__dirname,'views/index.html'))
                 }else{
-                    res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                    //res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                    res.render('sign-in',{message:'invalid password or username'})
                 }
                 res.sendFile(path.join(__dirname,'/views/index.html'))
             }else{
-                res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                //res.sendFile(path.join(__dirname,'/views/sign-in.html'))
+                res.render('sign-in',{message:'invalid password or username'})
             }
         });
         connection.release();
