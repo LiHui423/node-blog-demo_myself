@@ -9,6 +9,11 @@
 7.在views中创建文件default.html,项目首页，有登录链接和注册链接
 8.创建文件views/sign-in.html,sign-up.html,含有登录和注册的表单
 9.安装modules ：express,mysql,body-parser,项目根目录执行命令 cmd:cnpm i -S express mysql body-parser
+10.修改app.js文件，创建简单的服务器
+11.启动服务，根目录下cmd:supervisor app.js
+12.引入核心模块path，
+13.配置首页的路由，修改app.js文件，app.get('/',(req,res)=>{});
+14.配置注册页链接的路由，修改app.js文件，app.get('/sign-up',(req,res)=>{})
 
 
 
