@@ -1,11 +1,14 @@
 1.创建node-blog-demo项目
 2.创建.gitignore
+    2.1忽略 .idea
+    2.2忽略 node_modules
 3.创建README.md写项目基本信息
 4.创建 package.json 项目根目录下执行cmd命令 npm init,修改"main":app.js
 5.根目录下创建入口文件app.js
 6.创建目录views
 7.在views中创建文件default.html,项目首页，有登录链接和注册链接
 8.创建文件views/sign-in.html,sign-up.html,含有登录和注册的表单
+9.安装modules ：express,mysql,body-parser,项目根目录执行命令 cmd:cnpm i -S express mysql body-parser
 
 
 
