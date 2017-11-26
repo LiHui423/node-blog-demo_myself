@@ -44,6 +44,9 @@
 36.app.js中引入express-session
 37.app.js设置session中间件
 38.使用session:req.session.key=value;
+39.注销，修改index.html,添加注销链接
+40.修改user.js,处理注销的get请求：req.session.destroy();
+41.从定向到res.redirect('/');
 
 
 

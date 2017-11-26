@@ -93,4 +93,9 @@ module.exports=function(app){
             connection.release();
         });
     });
+
+    app.get('/logout',(req,res) => {
+        req.session.destroy();
+        res.redirect('/');//从定向到get('/',...)
+    })
 }
