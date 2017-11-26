@@ -40,6 +40,10 @@
 32.返回页面的方式改为：res.render('路径或路由名字',{key:value})
 33.页面跳转改为res.render()方式
 34.重构，创建路由目录 routes
+35.使用express session,先安装依赖，cmd:cnpm i -S express-session
+36.app.js中引入express-session
+37.app.js设置session中间件
+38.使用session:req.session.key=value;
 
 
 

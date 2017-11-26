@@ -71,10 +71,15 @@ module.exports=function(app){
                 if (err) throw err;
                 if(results.length===1){
                     let encryptedPassword=results[0].password;
+                    let userId=results[0].id;
                     //console.log(encryptedPassword);
                     if(bcrypt.compareSync(password,encryptedPassword)){
                         //res.sendFile(path.join(__dirname,'views/index.html'))
-                        res.render('index',{});
+
+                        req.session.username=username;
+                        req.session.userId=userId;
+
+                        res.render('index',{session:req.session});
                     }else{
                         //res.sendFile(path.join(__dirname,'/views/sign-in.html'))
                         res.render('sign-in',{message:'invalid password or username'})
